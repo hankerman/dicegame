@@ -5,16 +5,16 @@ using namespace std;
 
 int dice_print() {
 
-    int n = rand() % 6 + 1;
+    int n = rand() % 6 + 1, n2 = rand() % 6 + 1, summ;
    
-    cout << " _______" << endl;
-    cout << "/______/|" << endl;
-    cout << "|     | |" << endl;
-    cout << "|  " << n << "  | |" << endl;
-    cout << "|_____|/" << endl;
+    cout << " _______" << "\t" << " _______" << endl;
+    cout << "/______/|" << "\t" << "/______/|" << endl;
+    cout << "|     | |" << "\t" << "|     | |" << endl;
+    cout << "|  " << n << "  | |" << "\t" << "|  " << n2 << "  | |" << endl;
+    cout << "|_____|/" << "\t" << "|_____|/" << endl;
     cout << endl;
-    
-    return n;
+    summ = n + n2;
+    return summ;
 }
 
 
@@ -36,22 +36,20 @@ int main()
     step = rand() % 2;
     if (step == 1) {
         cout << "Игрок ходит первым" << endl;        
-        system("pause");
+        
 
         for (int i = 0; i < size; i++) {
             cout << "Ход игрока" << endl;
             system("pause");
 
-            summ_player += dice_print();
-            //cout << summ_player << endl;
-            summ_player += dice_print();
-            //cout << summ_player << endl;
+            summ_player += dice_print();            
+            
+            
 
             cout << "Ход компьютера" << endl;
-            summ_comp += dice_print();
-            //cout << summ_comp << endl;
-            summ_comp += dice_print();
-            //cout << summ_comp << endl;
+            summ_comp += dice_print();            
+            
+            
             
         }
 
@@ -61,17 +59,15 @@ int main()
         
         for (int i = 0; i < size; i++) {
             cout << "Ход компьютера" << endl;
-            summ_comp += dice_print();
-            //cout << summ_comp << endl;
-            summ_comp += dice_print();
-            //cout << summ_comp << endl;
+            summ_comp += dice_print();            
+            
+            
 
             cout << "Ход игрока" << endl;
             system("pause");
-            summ_player += dice_print();
-            //cout << summ_player << endl;
-            summ_player += dice_print();
-            //cout << summ_player << endl;
+            summ_player += dice_print();            
+            
+            
         }
         
     }
@@ -85,7 +81,7 @@ int main()
     else {
         cout << "Победил компьютер" << endl;
     }
-    float sr = summ_player / (size * 2), sr2 = summ_comp / (size * 2);
+    double sr = summ_player / (size * 2), sr2 = summ_comp / (size * 2);
 
     cout << "Среднее значение игрока " << sr << endl;
     cout << "Среднее значение для компьютера " << sr2 << endl;
