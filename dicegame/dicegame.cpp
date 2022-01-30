@@ -6,13 +6,14 @@ using namespace std;
 int dice_print() {
 
     int n = rand() % 6 + 1;
-
+   
     cout << " _______" << endl;
     cout << "/______/|" << endl;
     cout << "|     | |" << endl;
     cout << "|  " << n << "  | |" << endl;
     cout << "|_____|/" << endl;
     cout << endl;
+    
     return n;
 }
 
@@ -29,8 +30,7 @@ int main()
     человеком или  компьютером. Кубики отображаются
     с помощью символов. В конце игры необходимо выводить среднюю сумму по броскам для обоих участников.*/
 
-    const int size = 5;
-    int player_dice_1[size], player_dice_2[size], comp_dice_1[size], comp_dice_2[size];
+    const int size = 5;    
     int summ_player = 0, summ_comp = 0, step;
     
     step = rand() % 2;
@@ -41,6 +41,7 @@ int main()
         for (int i = 0; i < size; i++) {
             cout << "Ход игрока" << endl;
             system("pause");
+
             summ_player += dice_print();
             //cout << summ_player << endl;
             summ_player += dice_print();
@@ -77,6 +78,9 @@ int main()
 
     if (summ_player > summ_comp) {
         cout << "Победил игрок" << endl;
+    }
+    else if (summ_player == summ_comp) {
+        cout << "Победила дружба" << endl;
     }
     else {
         cout << "Победил компьютер" << endl;
