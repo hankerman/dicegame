@@ -9,7 +9,7 @@ void dice_init(int arr[], int size) {
 }
 void arr_dice_print(int arr[], int size) {
 
-
+    
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
@@ -31,7 +31,7 @@ int main()
 
     const int size = 5;
     int player_dice_1[size], player_dice_2[size], comp_dice_1[size], comp_dice_2[size];
-    int summ_player = 0, summ_comp = 0;
+    int summ_player = 0, summ_comp = 0, step;
 
     dice_init(player_dice_1, size);
     dice_init(player_dice_2, size);
@@ -42,5 +42,22 @@ int main()
     arr_dice_print(player_dice_2, size);
     arr_dice_print(comp_dice_1, size);
     arr_dice_print(comp_dice_2, size);
+
+    step = rand() % 2;
+    if (step == 1) {
+        cout << "Игрок ходит первым" << endl;        
+        system("pause");
+
+
+    }
+    else {
+        cout << "Компьютер ходит первым" << endl;
+        
+        
+    }
+
+
+
+
 
 }
